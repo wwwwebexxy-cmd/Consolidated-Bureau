@@ -1,0 +1,91 @@
+.footer {
+  background-color: var(--foreground);
+  color: var(--background);
+  padding: clamp(3rem, 6vw, 8rem) clamp(1rem, 4vw, 4rem) clamp(1rem, 3vw, 3rem);
+}
+
+.container {
+  max-width: 2000px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: clamp(2rem, 5vw, 6rem);
+  margin-bottom: clamp(2rem, 5vw, 5rem);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: clamp(1rem, 2vw, 2.5rem);
+  letter-spacing: 2px;
+}
+
+.heading {
+  font-size: clamp(1.1rem, 2vw, 1.8rem);
+  font-weight: 600;
+  margin-bottom: clamp(1rem, 2vw, 2.5rem);
+  color: var(--surface);
+  position: relative;
+}
+
+.heading::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 30px;
+  height: 2px;
+  background-color: var(--primary);
+}
+
+.text {
+  font-size: clamp(0.9rem, 1.2vw, 1.3rem);
+  line-height: 1.6;
+  opacity: 0.8;
+  max-width: 600px;
+}
+
+.links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.8rem, 1.5vw, 1.5rem);
+}
+
+.links li a {
+  color: var(--background);
+  opacity: 0.7;
+  text-decoration: none;
+  transition: opacity 0.3s ease, color 0.3s ease;
+  font-size: clamp(0.9rem, 1.2vw, 1.3rem);
+}
+
+.links li a:hover {
+  opacity: 1;
+  color: var(--primary);
+}
+
+.bottomBar {
+  padding-top: clamp(1.5rem, 3vw, 3rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  font-size: clamp(0.7rem, 1vw, 1.1rem);
+  opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
