@@ -19,8 +19,8 @@ export default function Footer() {
   return <footer className="site-footer"><div className="container">
     <div className="footer-main">
       <div className="footer-brand">
-        <Link href="/" aria-label="Consolidated Services Bureau home"><Image src="/logo.jpeg" alt="CSB logo" width={68} height={61} /></Link>
-        <h2>Consolidated<br />Services Bureau</h2>
+        <Link href="/" aria-label="Consolidated Bureau home"><Image src="/logo.jpeg" alt="CSB logo" width={68} height={61} /></Link>
+        <h2>Consolidated<br />Bureau</h2>
         <p>Independent marine surveys and loss adjusting from Abu Dhabi since 1993.</p>
       </div>
       <div className="footer-links">
@@ -29,6 +29,6 @@ export default function Footer() {
         <div><span>FOLLOW</span>{socialLinks.map((link) => <a className="footer-social-link" href={link.href} target="_blank" rel="noopener noreferrer" key={link.network}><SocialIcon network={link.network} />{link.name} ↗</a>)}</div>
       </div>
     </div>
-    <div className="footer-bottom"><span>© {new Date().getFullYear()} Consolidated Services Bureau. All rights reserved.</span><span>ABU DHABI · UNITED ARAB EMIRATES</span><a href="#top">Back to top ↑</a></div>
+    <div className="footer-bottom"><span>© {new Date().getFullYear()} Consolidated Bureau. All rights reserved.</span><span>ABU DHABI · UNITED ARAB EMIRATES</span><a href="#top">Back to top ↑</a></div>
   </div></footer>;
 }
