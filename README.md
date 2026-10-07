@@ -1,36 +1,23 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Consolidated Services Bureau website
 
-## Getting Started
+Next.js website for the Abu Dhabi marine surveying and loss adjusting business. The home page covers the company, services, UAE coverage, FAQs and contact details. `/gallery` shows the two supplied videos.
 
-First, run the development server:
+## Run locally
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```powershell
+npm.cmd install
+npm.cmd run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`. For a production check, run `npm.cmd run build` and `npm.cmd run lint`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Content and assets
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Business copy comes from the supplied `Brochure Text.docx`, edited for readability without adding unverified service claims.
+- `public/logo.jpeg`, the original four gallery photographs, 38 additional photographs in `public/gallery/`, and the two gallery videos are supplied assets.
+- `scripts/generate-brand-assets.py` creates the social sharing image, video posters and favicon from the supplied logo. Run it after changing the logo or brand artwork.
+- `lib/content.ts` holds service summaries, FAQs, the map link and production site URL.
 
-## Learn More
+Set `NEXT_PUBLIC_SITE_URL` to the exact live origin before deployment if it differs from `https://consolidatedbureau.com`. This value drives canonical URLs, structured data, the sitemap and Open Graph URLs.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The secondary address `ops@consoludatedbureau.com` is shown exactly as supplied. Confirm the spelling before publishing if it was meant to match the primary domain.

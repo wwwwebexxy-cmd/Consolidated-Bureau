@@ -1,45 +1,6 @@
-import React from 'react';
-import styles from './Footer.module.css';
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
-  return (
-    <footer className={styles.footer}>
-      <div className={styles.container}>
-        <div className={styles.grid}>
-          
-          <div className={styles.column}>
-            <h3 className={styles.logo}>Apex Financial</h3>
-            <p className={styles.text}>
-              Your trusted partner for comprehensive accounting, tax planning, and financial strategies.
-            </p>
-          </div>
-          
-          <div className={styles.column}>
-            <h4 className={styles.heading}>Quick Links</h4>
-            <ul className={styles.links}>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">Our Firm</a></li>
-              <li><a href="#service">Services</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div>
-          
-          <div className={styles.column}>
-            <h4 className={styles.heading}>Socials</h4>
-            <ul className={styles.links}>
-              <li><a href="#">LinkedIn</a></li>
-              <li><a href="#">Twitter</a></li>
-              <li><a href="#">Instagram</a></li>
-              <li><a href="#">Dribbble</a></li>
-            </ul>
-          </div>
-          
-        </div>
-        
-        <div className={styles.bottomBar}>
-          <p>&copy; {new Date().getFullYear()} Apex Financial. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
-  );
+  return <footer className="site-footer"><div className="container"><div className="footer-main"><div className="footer-brand"><Link href="/" aria-label="Consolidated Services Bureau home"><Image src="/logo.jpeg" alt="CSB logo" width={68} height={61} /></Link><h2>Consolidated<br />Services Bureau</h2><p>Independent marine surveys and loss adjusting from Abu Dhabi since 1993.</p></div><div className="footer-links"><div><span>EXPLORE</span><Link href="/#about">About us</Link><Link href="/#services">Services</Link><Link href="/gallery">Gallery</Link><Link href="/#faq">FAQs</Link></div><div><span>CONNECT</span><a href="mailto:cbops@consolidatedbureau.com">Email us</a><a href="tel:+971567931300">Call us</a><a href="https://wa.me/971567931300" target="_blank" rel="noopener noreferrer">WhatsApp</a><Link href="/#contact">Find our office</Link></div><div><span>FOLLOW</span><a href="https://www.linkedin.com/company/13210078/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://www.facebook.com/csbauh" target="_blank" rel="noopener noreferrer">Facebook ↗</a><a href="https://youtube.com/@consolidatedbureau-bc6yh?si=U2VUUfhjXMPFvbOX" target="_blank" rel="noopener noreferrer">YouTube ↗</a></div></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Consolidated Services Bureau. All rights reserved.</span><span>ABU DHABI · UNITED ARAB EMIRATES</span><a href="#top">Back to top ↑</a></div></div></footer>;
 }
