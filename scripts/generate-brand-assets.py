@@ -2,7 +2,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
 root = Path(__file__).resolve().parents[1]
-logo = Image.open(root / "public" / "logo.jpeg").convert("RGB")
+logo = Image.open(root / "public" / "consolidated-bureau-logo.webp").convert("RGB")
 logo.thumbnail((155, 155))
 
 card = Image.new("RGB", (1200, 630), "#0b1c2a")
@@ -23,9 +23,9 @@ sans = ImageFont.truetype(str(font_dir / "arial.ttf"), 27)
 small = ImageFont.truetype(str(font_dir / "arialbd.ttf"), 20)
 draw.text((67, 258), "MARINE SURVEYS", fill="#ffffff", font=serif)
 draw.text((67, 345), "& LOSS ADJUSTING", fill="#cf8963", font=serif)
-draw.text((69, 470), "CONSOLIDATED SERVICES BUREAU", fill="#e2e9e8", font=sans)
+draw.text((69, 470), "CONSOLIDATED BUREAU", fill="#e2e9e8", font=sans)
 draw.text((69, 545), "ABU DHABI  /  UAE  /  SINCE 1993", fill="#a4b6bd", font=small)
-card.save(root / "public" / "og-image.png", optimize=True)
+card.save(root / "public" / "consolidated-bureau-marine-surveys-og.webp", format="WEBP", quality=88, method=6)
 
 for number, subtitle in ((1, "FIELD FOOTAGE"), (2, "FIELD FOOTAGE")):
     poster = Image.new("RGB", (1200, 675), "#17374a" if number == 1 else "#244653")
@@ -35,13 +35,14 @@ for number, subtitle in ((1, "FIELD FOOTAGE"), (2, "FIELD FOOTAGE")):
     pen.ellipse((755, -270, 1495, 470), outline="#77909a", width=2)
     pen.ellipse((820, -205, 1430, 405), outline="#77909a", width=2)
     pen.rectangle((0, 0, 13, 675), fill="#cf8963")
-    pen.text((72, 62), "CONSOLIDATED SERVICES BUREAU", fill="#d9e4e5", font=small)
+    pen.text((72, 62), "CONSOLIDATED BUREAU", fill="#d9e4e5", font=small)
     pen.text((72, 474), subtitle, fill="#e3a078", font=small)
     pen.text((72, 517), "INSIDE THE FIELD", fill="#ffffff", font=serif)
-    poster.save(root / "public" / f"video-poster-0{number}.jpg", quality=88, optimize=True)
+    poster_name = "marine-survey-field-video-poster.webp" if number == 1 else "cargo-survey-field-video-poster.webp"
+    poster.save(root / "public" / poster_name, format="WEBP", quality=88, method=6)
 
 icon = Image.new("RGBA", (128, 128), "white")
-square = Image.open(root / "public" / "logo.jpeg").convert("RGBA")
+square = Image.open(root / "public" / "consolidated-bureau-logo.webp").convert("RGBA")
 square.thumbnail((120, 120))
 icon.paste(square, ((128 - square.width) // 2, (128 - square.height) // 2))
 icon.save(root / "app" / "favicon.ico", format="ICO", sizes=[(16, 16), (32, 32), (48, 48), (64, 64)])

@@ -4,28 +4,41 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import GalleryCollection from "@/components/GalleryCollection";
 import GalleryVideos from "@/components/GalleryVideos";
+import { siteUrl } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Gallery | Marine Survey Work in the UAE",
-  description: "View photographs and field footage of marine and cargo operations from Consolidated Services Bureau in Abu Dhabi, UAE.",
+  description: "View photographs and field footage of marine and cargo operations from Consolidated Bureau in Abu Dhabi, UAE.",
   alternates: { canonical: "/gallery" },
   openGraph: {
-    title: "Field Gallery | Consolidated Services Bureau",
+    title: "Field Gallery | Consolidated Bureau",
     description: "Photographs and footage from marine and cargo operations in the UAE.",
     url: "/gallery",
-    images: ["/og-image.png"],
+    images: ["/consolidated-bureau-marine-surveys-og.webp"],
   },
 };
 
 const videos = [
-  { src: "/gallery-first-video.mp4", poster: "/video-poster-01.jpg", title: "Field footage", description: "A view from the field, supplied by Consolidated Services Bureau." },
-  { src: "/gallery-second-video.mp4", poster: "/video-poster-02.jpg", title: "More from the field", description: "More footage from the team's survey work." },
+  { src: "/consolidated-bureau-field-footage-01.mp4", poster: "/marine-survey-field-video-poster.webp", title: "Field footage", description: "A view from the field, supplied by Consolidated Bureau." },
+  { src: "/consolidated-bureau-field-footage-02.mp4", poster: "/cargo-survey-field-video-poster.webp", title: "More from the field", description: "More footage from the team's survey work." },
 ];
+
+const videoJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": videos.map((video) => ({
+    "@type": "VideoObject",
+    name: video.title,
+    description: video.description,
+    thumbnailUrl: new URL(video.poster, siteUrl).href,
+    contentUrl: new URL(video.src, siteUrl).href,
+  })),
+};
 
 export default function GalleryPage() {
   return <>
     <Header />
     <main className="gallery-page">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoJsonLd).replace(/</g, "\\u003c") }} />
       <section className="gallery-hero">
         <div className="container">
           <p className="eyebrow eyebrow-light">THE CSB GALLERY</p>

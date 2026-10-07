@@ -242,3 +242,24 @@ section[id]{scroll-margin-top:88px}
 .footer-links .footer-social-link{display:inline-flex;align-items:center;gap:10px;min-height:28px}
 .footer-social-link svg{display:block;width:19px;height:19px;flex:none;color:var(--sea-light)}
 .footer-social-link:focus-visible{outline:2px solid var(--sea-light);outline-offset:4px}
+
+/* Keep the shorter company name prominent at every viewport width. */
+.brand-name strong{font-size:16px}
+.brand-name span{font-size:13px}
+.footer-brand h2{font-size:40px}
+@media(max-width:760px){
+  .brand-name strong{font-size:14px}
+  .brand-name span{font-size:12px}
+  .footer-main,.footer-brand,.footer-bottom{text-align:center}
+  .footer-brand p{margin-inline:auto}
+  .footer-links{grid-template-columns:1fr;justify-items:center}
+  .footer-links>div{align-items:center;text-align:center}
+  .footer-links>div:last-child{grid-column:auto}
+  .footer-bottom{flex-direction:column;align-items:center;justify-content:center}
+  .footer-bottom span:nth-child(2){display:inline}
+  .footer-brand h2{font-size:38px}
+}
+@media(max-width:400px){
+  .brand-name strong{font-size:12px}
+  .brand-name span{font-size:11px}
+}
