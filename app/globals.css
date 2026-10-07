@@ -222,3 +222,23 @@ section[id]{scroll-margin-top:88px}
   .photo-overlay strong{font-size:18px}
   .floating-actions{right:10px;bottom:10px}
 }
+
+/* Muted field footage loops in place and expands without restarting playback. */
+.gallery-videos-section .video-frame{position:relative}
+.video-zoom{position:absolute;inset:0;z-index:1;display:flex;align-items:flex-end;justify-content:flex-end;width:100%;padding:16px;border:0;background:transparent;cursor:zoom-in}
+.video-zoom-label{display:inline-flex;align-items:center;gap:12px;padding:11px 14px;background:var(--paper);color:var(--navy);font-size:11px;font-weight:700;letter-spacing:.04em;box-shadow:0 6px 20px #06141b40;transition:background .2s,transform .2s}
+.video-zoom:hover .video-zoom-label{background:var(--sea-light);transform:translateY(-2px)}
+.video-zoom:focus-visible{outline:3px solid var(--sea-light);outline-offset:-5px}
+.video-card-expanded{position:fixed;inset:0;z-index:1150;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:clamp(16px,4vw,48px);background:#06141bf2;overflow-y:auto}
+.video-card-expanded .video-frame{width:min(100%,1240px);aspect-ratio:16/9;flex:none;box-shadow:0 24px 70px #0008}
+.video-card-expanded .video-caption{width:min(100%,1240px);padding:18px 24px 22px;background:var(--paper);color:var(--navy)}
+.video-card-expanded .video-caption h2{margin:7px 0 4px}
+.video-card-expanded .video-zoom{cursor:zoom-out}
+.video-card-expanded .video-zoom-label{background:var(--sea-light)}
+@media(max-height:700px){.video-card-expanded .video-frame,.video-card-expanded .video-caption{width:min(100%,900px)}}
+@media(max-width:560px){.video-card-expanded{padding-inline:0}.video-card-expanded .video-frame,.video-card-expanded .video-caption{width:100%}}
+
+/* Social marks give each footer destination a clear visual cue. */
+.footer-links .footer-social-link{display:inline-flex;align-items:center;gap:10px;min-height:28px}
+.footer-social-link svg{display:block;width:19px;height:19px;flex:none;color:var(--sea-light)}
+.footer-social-link:focus-visible{outline:2px solid var(--sea-light);outline-offset:4px}

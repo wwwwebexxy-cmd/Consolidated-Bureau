@@ -32,46 +32,34 @@ export default function PageMotion() {
     const main = document.querySelector("main");
     if (!main || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    const pending = new Set<HTMLElement>();
-    let timer = 0;
-    const revealInView = () => {
-      timer = 0;
-      for (const element of pending) {
-        if (!element.isConnected) {
-          pending.delete(element);
-          continue;
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("motion-visible");
+          observer.unobserve(entry.target);
         }
-        const rect = element.getBoundingClientRect();
-        if (rect.top >= window.innerHeight * 0.94 || rect.bottom <= 0) continue;
-        element.classList.add("motion-visible");
-        pending.delete(element);
       }
-    };
-    const scheduleReveal = () => {
-      if (!timer && pending.size) timer = window.setTimeout(revealInView, 40);
-    };
+    }, { rootMargin: "0px 0px -6% 0px" });
 
     const register = () => {
       main.querySelectorAll<HTMLElement>(revealSelector).forEach((element) => {
         if (element.classList.contains("motion-target")) return;
         element.classList.add("motion-target");
-        pending.add(element);
+        observer.observe(element);
       });
-      scheduleReveal();
     };
 
     register();
     document.documentElement.classList.add("motion-ready");
     const mutations = new MutationObserver(register);
     mutations.observe(main, { childList: true, subtree: true });
-    window.addEventListener("scroll", scheduleReveal, { passive: true });
-    window.addEventListener("resize", scheduleReveal);
 
     return () => {
       mutations.disconnect();
-      window.removeEventListener("scroll", scheduleReveal);
-      window.removeEventListener("resize", scheduleReveal);
-      clearTimeout(timer);
+      observer.disconnect();
+      main.querySelectorAll<HTMLElement>(".motion-target").forEach((element) => {
+        element.classList.remove("motion-target", "motion-visible");
+      });
       document.documentElement.classList.remove("motion-ready");
     };
   }, [pathname]);
