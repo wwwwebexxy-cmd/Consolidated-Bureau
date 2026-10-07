@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { galleryGroups, galleryPhotos } from "@/lib/gallery";
+import GalleryCollection from "@/components/GalleryCollection";
 
 export const metadata: Metadata = {
   title: "Gallery | Marine Survey Work in the UAE",
@@ -30,45 +29,29 @@ export default function GalleryPage() {
         <div className="container">
           <p className="eyebrow eyebrow-light">THE CSB GALLERY</p>
           <div className="gallery-hero-row">
-            <h1>A closer look<br /><em>at the work.</em></h1>
-            <p>Photographs and footage from marine and cargo operations in the field.</p>
+            <h1>From quay<br /><em>to cargo hold.</em></h1>
+            <p>A working archive of vessel operations, cargo condition, heavy lifts and secured transport.</p>
           </div>
           <div className="gallery-hero-bottom"><span>MARINE SURVEYS / ABU DHABI, UAE</span><span>SCROLL TO EXPLORE ↓</span></div>
         </div>
       </section>
 
-      <section id="photographs" className="gallery-content gallery-photos-section section">
-        <div className="container">
-          <div className="gallery-content-head"><p>FIELD PHOTOGRAPHS</p><span>{galleryPhotos.length} photographs across marine and cargo work</span></div>
-          <nav className="gallery-jump-nav" aria-label="Photograph categories">
-            {galleryGroups.map((group) => <a href={`#gallery-${group.id}`} key={group.id}>{group.title} <span aria-hidden="true">↗</span></a>)}
-          </nav>
-          {galleryGroups.map((group) => <div className="gallery-photo-group" id={`gallery-${group.id}`} key={group.id}>
-            <div className="gallery-group-heading"><div><span>FIELD COLLECTION</span><h2>{group.title}</h2></div><p>{group.description}</p></div>
-            <div className="photo-grid">
-              {galleryPhotos.filter((photo) => photo.group === group.id).map((photo) => <article id={`photo-${photo.id}`} className="photo-card" key={photo.id}>
-                <div className="photo-frame"><Image src={photo.src} alt={photo.alt} fill sizes="(max-width: 760px) 100vw, (max-width: 1100px) 50vw, 33vw" /></div>
-                <div className="photo-caption">
-                  <span>{photo.category}</span>
-                  <h3>{photo.title}</h3>
-                  <p>{photo.description}</p>
-                  <Link href={`/#service-${photo.serviceId}`}>Explore related service <span aria-hidden="true">↗</span></Link>
-                </div>
-              </article>)}
-            </div>
-          </div>)}
-        </div>
-      </section>
-
       <section id="videos" className="gallery-content gallery-videos-section section">
         <div className="container">
-          <div className="gallery-content-head"><p>FIELD VIDEOS</p><span>More from the team</span></div>
+          <div className="gallery-content-head"><p>01 / FIELD VIDEOS</p><span>Watch the work in motion</span></div>
           <div className="video-grid">
             {videos.map((video) => <article className="video-card" key={video.src}>
               <div className="video-frame"><video controls preload="none" poster={video.poster} playsInline aria-label={video.title}><source src={video.src} type="video/mp4" />Your browser does not support the video tag.</video></div>
               <div className="video-caption"><span>CSB GALLERY</span><h2>{video.title}</h2><p>{video.description}</p></div>
             </article>)}
           </div>
+        </div>
+      </section>
+
+      <section id="photographs" className="gallery-content gallery-photos-section section">
+        <div className="container">
+          <div className="gallery-content-head"><p>02 / FIELD PHOTOGRAPHS</p><span>Filter the collection, then open an image for details</span></div>
+          <GalleryCollection />
           <div className="gallery-note"><span>INSIDE THE FIELD</span><p>Every assignment begins with a clear brief and ends with useful findings. Speak with our team about the survey you need.</p><Link className="text-link" href="/#contact">Start a conversation <span aria-hidden="true">↗</span></Link></div>
         </div>
       </section>

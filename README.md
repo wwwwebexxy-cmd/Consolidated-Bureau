@@ -1,6 +1,6 @@
 # Consolidated Services Bureau website
 
-Next.js website for the Abu Dhabi marine surveying and loss adjusting business. The home page covers the company, services, UAE coverage, FAQs and contact details. `/gallery` shows the two supplied videos.
+Next.js website for the Abu Dhabi marine surveying and loss adjusting business. The home page covers the company, services, UAE coverage, FAQs and contact details. `/gallery` presents the two supplied videos and a filterable field photograph collection.
 
 ## Run locally
 
@@ -15,6 +15,7 @@ Open `http://localhost:3000`. For a production check, run `npm.cmd run build` an
 
 - Business copy comes from the supplied `Brochure Text.docx`, edited for readability without adding unverified service claims.
 - `public/logo.jpeg`, the original four gallery photographs, 38 additional photographs in `public/gallery/`, and the two gallery videos are supplied assets.
+- `public/hero-marine-survey.png` is a generated illustrative hero image; the gallery uses supplied field photographs.
 - `scripts/generate-brand-assets.py` creates the social sharing image, video posters and favicon from the supplied logo. Run it after changing the logo or brand artwork.
 - `lib/content.ts` holds service summaries, FAQs, the map link and production site URL.
 

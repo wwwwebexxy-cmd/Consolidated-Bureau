@@ -28,3 +28,4 @@ export const faqs = [
 ];
 
 export const mapUrl = "https://www.google.com/maps/place/24%C2%B028'44.2%22N+54%C2%B022'17.0%22E/@24.4789371,54.3688088,17z/data=!3m1!4b1!4m4!3m3!8m2!3d24.4789371!4d54.3713837";
+export const mapEmbedUrl = "https://maps.google.com/maps?q=24.4789371%2C54.3713837&t=k&z=17&output=embed";
