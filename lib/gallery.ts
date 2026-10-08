@@ -1,10 +1,10 @@
 export type GalleryGroupId = "cargo" | "lifting" | "securing" | "vessels";
 
 export const galleryGroups: { id: GalleryGroupId; title: string; description: string }[] = [
-  { id: "cargo", title: "Cargo & condition", description: "Cargo, packaging, vehicles and inspection details." },
-  { id: "lifting", title: "Lifting & loading", description: "Project cargo moving between shore, transport and vessel." },
-  { id: "securing", title: "Transport & securing", description: "Loads prepared, stowed and secured for their next journey." },
-  { id: "vessels", title: "Vessels & small craft", description: "Shipboard scenes, carriers and specialist craft." },
+  { id: "cargo", title: "Cargo & condition", description: "Cargo condition, packaging, vehicle and container inspection." },
+  { id: "lifting", title: "Lifting & loading", description: "Project cargo transfer between shore, transport equipment and vessel." },
+  { id: "securing", title: "Transport & securing", description: "Cargo stowage and securing for marine or road transport." },
+  { id: "vessels", title: "Vessels & small craft", description: "Vessel operations, charter-condition work and small craft." },
 ];
 
 export type GalleryPhoto = {

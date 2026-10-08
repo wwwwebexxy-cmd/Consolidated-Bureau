@@ -21,7 +21,7 @@ export default function Footer() {
       <div className="footer-brand">
         <Link href="/" aria-label="Consolidated Bureau home"><Image src="/consolidated-bureau-logo.webp" alt="Consolidated Bureau logo" width={68} height={61} /></Link>
         <h2>Consolidated<br />Bureau</h2>
-        <p>Independent marine surveys and loss adjusting from Abu Dhabi since 1993.</p>
+        <p>Marine surveys, cargo inspections and loss adjusting from Abu Dhabi since 1993.</p>
       </div>
       <div className="footer-links">
         <div><span>EXPLORE</span><Link href="/#about">About us</Link><Link href="/#services">Services</Link><Link href="/gallery">Gallery</Link><Link href="/#faq">FAQs</Link></div>
