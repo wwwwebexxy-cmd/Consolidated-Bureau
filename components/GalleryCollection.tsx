@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { galleryGroups, galleryPhotos, type GalleryGroupId, type GalleryPhoto } from "@/lib/gallery";
+import ArrowIcon from "@/components/ArrowIcon";
 
 type Filter = "all" | GalleryGroupId;
 
@@ -56,7 +57,7 @@ export default function GalleryCollection() {
         <button type="button" className="photo-open" onClick={(event) => { trigger.current = event.currentTarget; setActivePhoto(photo); }} aria-label={`View ${photo.title}`}>
           <Image src={photo.src} alt={photo.alt} fill sizes="(max-width: 620px) 100vw, (max-width: 980px) 50vw, 25vw" />
           <span className="photo-overlay"><span>{photo.category}</span><strong>{photo.title}</strong></span>
-          <span className="photo-expand" aria-hidden="true">&#8599;</span>
+          <span className="photo-expand"><ArrowIcon /></span>
         </button>
       </article>)}
     </div>
@@ -65,7 +66,7 @@ export default function GalleryCollection() {
       <div ref={dialog} className="photo-lightbox-panel" role="dialog" aria-modal="true" aria-labelledby="photo-lightbox-title">
         <button ref={closeButton} className="photo-lightbox-close" type="button" onClick={() => setActivePhoto(null)} aria-label="Close image">&#215;</button>
         <div className="photo-lightbox-image"><Image src={activePhoto.src} alt={activePhoto.alt} fill sizes="95vw" /></div>
-        <div className="photo-lightbox-copy"><div><span>{activePhoto.category}</span><h2 id="photo-lightbox-title">{activePhoto.title}</h2><p>{activePhoto.description}</p></div><Link href={`/#service-${activePhoto.serviceId}`}>View related survey service &#8599;</Link></div>
+        <div className="photo-lightbox-copy"><div><span>{activePhoto.category}</span><h2 id="photo-lightbox-title">{activePhoto.title}</h2><p>{activePhoto.description}</p></div><Link href={`/#service-${activePhoto.serviceId}`}>View related survey service <ArrowIcon /></Link></div>
       </div>
     </div>}
   </>;

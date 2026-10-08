@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import ArrowIcon from "@/components/ArrowIcon";
 
 type GalleryVideo = {
   src: string;
@@ -61,7 +62,7 @@ export default function GalleryVideos({ videos }: { videos: GalleryVideo[] }) {
             aria-label={`${isExpanded ? "Zoom out of" : "Zoom in on"} ${video.title}`}
             onClick={() => setExpanded(isExpanded ? null : index)}
           >
-            <span className="video-zoom-label">{isExpanded ? "Zoom out" : "Zoom in"} <span aria-hidden="true">{isExpanded ? "↙" : "↗"}</span></span>
+            <span className="video-zoom-label">{isExpanded ? "Zoom out" : "Zoom in"} <ArrowIcon direction={isExpanded ? "down-left" : "up-right"} /></span>
           </button>
         </div>
         <div className="video-caption"><span>CSB GALLERY</span><h2>{video.title}</h2><p>{video.description}</p></div>

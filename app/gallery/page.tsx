@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import GalleryCollection from "@/components/GalleryCollection";
 import GalleryVideos from "@/components/GalleryVideos";
+import ArrowIcon from "@/components/ArrowIcon";
 import { siteUrl } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -46,7 +47,7 @@ export default function GalleryPage() {
             <h1>Marine and cargo<br /><em>survey work in the field.</em></h1>
             <p>Photographs and footage of cargo condition, vessel operations, heavy lifts, container work and cargo securing.</p>
           </div>
-          <div className="gallery-hero-bottom"><span>MARINE &amp; CARGO SURVEY WORK / UAE</span><span>VIEW THE COLLECTION &#8595;</span></div>
+          <div className="gallery-hero-bottom"><span>MARINE &amp; CARGO SURVEY WORK / UAE</span><span>VIEW THE COLLECTION <ArrowIcon direction="down" /></span></div>
         </div>
       </section>
 
@@ -61,7 +62,7 @@ export default function GalleryPage() {
         <div className="container">
           <div className="gallery-content-head"><p>02 / FIELD PHOTOGRAPHS</p><span>Browse by operation type, then open an image for details</span></div>
           <GalleryCollection />
-          <div className="gallery-note"><span>CSB SURVEY SERVICES</span><p>The gallery includes examples associated with cargo damage, loading and discharge, marine warranty, lashing, container and charter-survey work.</p><Link className="text-link" href="/#contact">Discuss an instruction <span aria-hidden="true">&#8599;</span></Link></div>
+          <div className="gallery-note"><span>CSB SURVEY SERVICES</span><p>The gallery includes examples associated with cargo damage, loading and discharge, marine warranty, lashing, container and charter-survey work.</p><Link className="text-link" href="/#contact">Discuss an instruction <ArrowIcon /></Link></div>
         </div>
       </section>
     </main>

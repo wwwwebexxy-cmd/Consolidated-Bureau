@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import ArrowIcon from "@/components/ArrowIcon";
 
 type SocialNetwork = "linkedin" | "facebook" | "youtube";
 
@@ -26,9 +27,9 @@ export default function Footer() {
       <div className="footer-links">
         <div><span>EXPLORE</span><Link href="/#about">About us</Link><Link href="/#services">Services</Link><Link href="/gallery">Gallery</Link><Link href="/#faq">FAQs</Link></div>
         <div><span>CONNECT</span><a href="mailto:cbops@consolidatedbureau.com">Email us</a><a href="tel:+971567931300">Call us</a><a href="https://wa.me/971567931300" target="_blank" rel="noopener noreferrer">WhatsApp</a><Link href="/#contact">Find our office</Link></div>
-        <div><span>FOLLOW</span>{socialLinks.map((link) => <a className="footer-social-link" href={link.href} target="_blank" rel="noopener noreferrer" key={link.network}><SocialIcon network={link.network} />{link.name} ↗</a>)}</div>
+        <div><span>FOLLOW</span>{socialLinks.map((link) => <a className="footer-social-link" href={link.href} target="_blank" rel="noopener noreferrer" key={link.network}><SocialIcon network={link.network} />{link.name} <ArrowIcon /></a>)}</div>
       </div>
     </div>
-    <div className="footer-bottom"><span>© {new Date().getFullYear()} Consolidated Bureau. All rights reserved.</span><span>ABU DHABI · UNITED ARAB EMIRATES</span><a href="#top">Back to top ↑</a></div>
+    <div className="footer-bottom"><span>© {new Date().getFullYear()} Consolidated Bureau. All rights reserved.</span><span>ABU DHABI · UNITED ARAB EMIRATES</span><a href="#top">Back to top <ArrowIcon direction="up" /></a></div>
   </div></footer>;
 }

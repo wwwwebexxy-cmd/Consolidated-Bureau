@@ -263,3 +263,22 @@ section[id]{scroll-margin-top:88px}
   .brand-name strong{font-size:12px}
   .brand-name span{font-size:11px}
 }
+
+/* Icons are SVGs so mobile browsers never substitute them with emoji glyphs. */
+.arrow-icon{display:inline-block;flex:none;vertical-align:-.15em}
+.button .arrow-icon,.text-link .arrow-icon{width:19px;height:19px}
+.service-arrow{width:19px;height:19px;color:var(--ink)}
+.header-cta .arrow-icon{width:20px;height:20px;color:#2e7178}
+.header-mobile-cta .arrow-icon{width:18px;height:18px;margin-left:10px;color:var(--sea-light)}
+.gallery-teaser-stamp .arrow-icon{width:17px;height:17px;color:var(--sea)}
+.contact-big-link .arrow-icon{width:24px;height:24px;color:var(--sea)}
+.contact-actions .arrow-icon{width:16px;height:16px;margin-left:4px}
+.map-link .arrow-icon{width:19px;height:19px;margin-left:14px;color:#2f747a}
+.gallery-hero-bottom .arrow-icon{width:14px;height:14px}
+.photo-expand .arrow-icon{width:18px;height:18px}
+.photo-lightbox-copy a{display:inline-flex;align-items:center;gap:9px}
+.photo-lightbox-copy a .arrow-icon{width:16px;height:16px}
+.video-zoom-label .arrow-icon{width:17px;height:17px}
+.footer-social-link .arrow-icon{width:14px;height:14px;margin-left:-4px}
+.footer-bottom a{display:inline-flex;align-items:center;gap:6px}
+.footer-bottom a .arrow-icon{width:15px;height:15px}
