@@ -22,10 +22,10 @@ export default function Footer() {
       <div className="footer-brand">
         <Link href="/" aria-label="Consolidated Bureau home"><Image src="/consolidated-bureau-logo.webp" alt="Consolidated Bureau logo" width={68} height={61} /></Link>
         <h2>Consolidated<br />Bureau</h2>
-        <p>Marine surveys, cargo inspections and loss adjusting from Abu Dhabi since 1993.</p>
+        <p>Headquarters Abu Dhabi<br />Since 1993</p>
       </div>
       <div className="footer-links">
-        <div><span>EXPLORE</span><Link href="/#about">About us</Link><Link href="/#services">Services</Link><Link href="/gallery">Gallery</Link><Link href="/#faq">FAQs</Link></div>
+        <div><span>EXPLORE</span><Link href="/#about">Who we are?</Link><Link href="/#services">Our Services</Link><Link href="/gallery">Gallery</Link></div>
         <div><span>CONNECT</span><a href="mailto:cbops@consolidatedbureau.com">Email us</a><a href="tel:+971567931300">Call us</a><a href="https://wa.me/971567931300" target="_blank" rel="noopener noreferrer">WhatsApp</a><Link href="/#contact">Find our office</Link></div>
         <div><span>FOLLOW</span>{socialLinks.map((link) => <a className="footer-social-link" href={link.href} target="_blank" rel="noopener noreferrer" key={link.network}><SocialIcon network={link.network} />{link.name} <ArrowIcon /></a>)}</div>
       </div>

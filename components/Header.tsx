@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import ArrowIcon from "@/components/ArrowIcon";
 
-const links = [{ label: "Home", href: "/" }, { label: "About", href: "/#about" }, { label: "Services", href: "/#services" }, { label: "Gallery", href: "/gallery" }, { label: "FAQs", href: "/#faq" }, { label: "Contact", href: "/#contact" }];
+const links = [{ label: "Home", href: "/" }, { label: "Who we are?", href: "/#about" }, { label: "Our Services", href: "/#services" }, { label: "Gallery", href: "/gallery" }, { label: "Contact", href: "/#contact" }];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
