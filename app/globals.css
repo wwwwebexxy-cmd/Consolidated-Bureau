@@ -282,3 +282,23 @@ section[id]{scroll-margin-top:88px}
 .footer-social-link .arrow-icon{width:14px;height:14px;margin-left:-4px}
 .footer-bottom a{display:inline-flex;align-items:center;gap:6px}
 .footer-bottom a .arrow-icon{width:15px;height:15px}
+
+/* Give the primary brand mark more presence without crowding the navigation. */
+.brand-mark{width:68px;height:58px}
+.brand-mark img{width:68px;height:58px}
+@media(max-width:760px){.brand{gap:9px}.brand-mark,.brand-mark img{width:54px;height:48px}}
+@media(max-width:400px){.brand-mark,.brand-mark img{width:50px;height:45px}}
+
+/* The supplied brand animation plays inline with its extracted still as a fallback. */
+.hero-media video{object-fit:cover;object-position:center;filter:saturate(.96) contrast(1.02)}
+.hero-media-shade{background:linear-gradient(180deg,#ffffff08 0%,transparent 35%,#0b1c2a24 100%)}
+.hero-media-top{color:var(--navy);text-shadow:0 1px 12px #ffffffaa}
+.hero-media-bottom{color:var(--navy);text-shadow:0 1px 12px #ffffffaa}
+.hero-image-index{border-top-color:var(--sea);color:var(--navy)}
+.hero-media-bottom>.hero-image-index{font-family:Arial,Helvetica,sans-serif;font-size:10px;line-height:1.55;text-align:left}
+.hero-media-bottom>.hero-image-index{max-width:none;white-space:nowrap;font-size:clamp(7px,0.7vw,10px);letter-spacing:clamp(.06em,.1vw,.1em)}
+.hero-media-bottom>span.hero-image-index:last-child{font-family:Arial,Helvetica,sans-serif;font-size:clamp(7px,0.7vw,10px);line-height:1.55;text-align:left;max-width:none;white-space:nowrap;letter-spacing:clamp(.06em,.1vw,.1em)}
+
+/* Keep the long hero heading inside the left content column. */
+.hero-copy{min-width:0}
+.hero h1{white-space:normal}

@@ -9,10 +9,10 @@ import { siteUrl } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Field Gallery | Marine and Cargo Survey Work",
-  description: "Photographs and field footage of cargo condition, vessel operations, heavy lifts and cargo securing from Consolidated Bureau.",
+  description: "Photographs and field footage of cargo condition, vessel operations, heavy lifts and cargo securing from Consolidated Bureau LLC-S.P.C.",
   alternates: { canonical: "/gallery" },
   openGraph: {
-    title: "Marine and Cargo Survey Field Gallery | Consolidated Bureau",
+    title: "Marine and Cargo Survey Field Gallery | Consolidated Bureau LLC-S.P.C",
     description: "Photographs and field footage of cargo condition, vessel operations, heavy lifts and cargo securing.",
     url: "/gallery",
     images: ["/consolidated-bureau-marine-surveys-og.webp"],

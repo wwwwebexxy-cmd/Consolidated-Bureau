@@ -1,11 +1,11 @@
 export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://consolidatedbureau.com";
 
 export const company = {
-  name: "Consolidated Bureau",
-  legalName: "Consolidated Services Bureau",
+  name: "Consolidated Bureau LLC-S.P.C",
+  legalName: "Consolidated Bureau LLC-S.P.C",
   established: "1993",
   intro: [
-    "Established in 1993 as a Survey and Loss Adjusting Company with corporate base at Abu Dhabi, capital city of U.A.E with the objective of meeting various survey requirements primarily of the Gulf region.",
+    "Established in 1993 as a Marine Survey and Loss Adjusting Company with corporate base at Abu Dhabi, capital city of U.A.E with the objective of meeting various survey requirements primarily of the Gulf region.",
     "Ever Since its inception, with seasoned professionals at helm of affairs, CB has been providing quality services to the insurers and shipping industry of this region. We have been addressing various survey requirements of Cargo Underwriters / Ship Owners / Ship Agents / Traders / Importers / Exporters / Manufacturers / Logistic Companies in Gulf region.",
     "CB has acquired highly competitive expertise in survey domain during its more than three decades experience in this region. We have been working and continuously updating ourselves to match with the practices / demands of international trade, logistics and insurance industries.",
     "Our surveyors who can boast of a combined experience of more than 100+ years in survey field basically act as an interface between all concerned parties and suggest feasible steps to solve the problems which come across while addressing various claims without getting into any disputes. Through the knowledge acquired over the years we have formulated a unique style of reporting which often exceeds the expectations of our clients.",
@@ -70,8 +70,8 @@ export const services: Service[] = [
     id: "measurement",
     title: "Measurement Survey",
     description: "This survey is carried out prior to loading and / or after discharge especially when there is a dispute between the shipper and the carriers on measurements of the cargo",
-    image: "/gallery/pipe-cargo-at-port.webp",
-    imageAlt: "Rows of steel pipes stored at a port.",
+    image: "/measurement-survey.jpeg",
+    imageAlt: "Survey equipment used during a measurement survey.",
   },
   {
     id: "lashing",
@@ -102,8 +102,8 @@ export const services: Service[] = [
     id: "draft",
     title: "Draft Survey",
     description: "This survey is carried out to quantify the cargo after loading on the vessel or discharged from the vessel by obtaining draft measurements.",
-    image: "/gallery/steel-coil-inspection.webp",
-    imageAlt: "Surveyor inspecting a steel coil.",
+    image: "/draft-survey.jpeg",
+    imageAlt: "Surveyor taking draft measurements on a vessel hull.",
   },
   {
     id: "hull-machinery",
@@ -114,8 +114,8 @@ export const services: Service[] = [
       "Claim Handling in cases of collision incidents, arranging of surveys and cause investigations.",
       "Loss of Hire Surveys",
     ],
-    image: "/gallery/vessel-deck-cargo.webp",
-    imageAlt: "Industrial structure secured on a cargo vessel deck.",
+    image: "/hull-and-machinery.jpeg",
+    imageAlt: "Surveyors inspecting the hull and machinery of a vessel.",
   },
   {
     id: "draught",
@@ -128,8 +128,8 @@ export const services: Service[] = [
     id: "bunker",
     title: "Bunker Survey",
     description: "Your essential loss-control tool for fuel management. We perform independent tank soundings, temperature corrections, and density verifications to confirm the exact quantity of fuel oil and lubricants delivered or remaining on board.",
-    image: "/gallery/cargo-vessel-at-berth.webp",
-    imageAlt: "Cargo vessel moored at a working quay.",
+    image: "/bunker-survey.jpeg",
+    imageAlt: "Surveyor measuring fuel inside a bunker tank.",
   },
   {
     id: "on-hire-off-hire-detail",
@@ -149,8 +149,8 @@ export const services: Service[] = [
     id: "environmental-damage",
     title: "Environmental Damage Survey",
     description: "Rapid response and liability mitigation for ecological incidents. We assess the physical impact and spread of hull groundings, oil spills, or chemical leaks to help guide containment, clean-up, and insurance valuation.",
-    image: "/gallery/small-craft-at-the-quay.webp",
-    imageAlt: "Small craft moored at a quay.",
+    image: "/environment-damage-survey.jpeg",
+    imageAlt: "Cargo vessel listing in rough water during an environmental damage survey.",
   },
   {
     id: "chemical-oils",

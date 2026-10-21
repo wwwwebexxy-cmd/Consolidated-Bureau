@@ -1,4 +1,4 @@
-# Consolidated Services Bureau website
+# Consolidated Bureau LLC-S.P.C website
 
 Next.js website for the Abu Dhabi marine surveying and loss adjusting business. The home page covers the company, services, UAE coverage and contact details. `/gallery` presents the two supplied videos and a filterable field photograph collection.
 

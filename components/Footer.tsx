@@ -20,8 +20,8 @@ export default function Footer() {
   return <footer className="site-footer"><div className="container">
     <div className="footer-main">
       <div className="footer-brand">
-        <Link href="/" aria-label="Consolidated Bureau home"><Image src="/consolidated-bureau-logo.webp" alt="Consolidated Bureau logo" width={68} height={61} /></Link>
-        <h2>Consolidated<br />Bureau</h2>
+        <Link href="/" aria-label="Consolidated Bureau LLC-S.P.C home"><Image src="/consolidated-bureau-logo.webp" alt="Consolidated Bureau LLC-S.P.C logo" width={68} height={61} /></Link>
+        <h2>Consolidated Bureau<br /><em>LLC-S.P.C</em></h2>
         <p>Headquarters Abu Dhabi<br />Since 1993</p>
       </div>
       <div className="footer-links">
@@ -30,6 +30,6 @@ export default function Footer() {
         <div><span>FOLLOW</span>{socialLinks.map((link) => <a className="footer-social-link" href={link.href} target="_blank" rel="noopener noreferrer" key={link.network}><SocialIcon network={link.network} />{link.name} <ArrowIcon /></a>)}</div>
       </div>
     </div>
-    <div className="footer-bottom"><span>© {new Date().getFullYear()} Consolidated Bureau. All rights reserved.</span><span>ABU DHABI · UNITED ARAB EMIRATES</span><a href="#top">Back to top <ArrowIcon direction="up" /></a></div>
+    <div className="footer-bottom"><span>&copy; {new Date().getFullYear()} Consolidated Bureau LLC-S.P.C. All rights reserved.</span><span>ABU DHABI &middot; UNITED ARAB EMIRATES</span><a href="#top">Back to top <ArrowIcon direction="up" /></a></div>
   </div></footer>;
 }
