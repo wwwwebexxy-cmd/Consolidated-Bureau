@@ -6,10 +6,12 @@ import GalleryCollection from "@/components/GalleryCollection";
 import GalleryVideos from "@/components/GalleryVideos";
 import ArrowIcon from "@/components/ArrowIcon";
 import { siteUrl } from "@/lib/content";
+import { galleryPhotos } from "@/lib/gallery";
 
 export const metadata: Metadata = {
   title: "Field Gallery | Marine and Cargo Survey Work",
   description: "Photographs and field footage of cargo condition, vessel operations, heavy lifts and cargo securing from Consolidated Bureau LLC-S.P.C.",
+  keywords: ["marine survey photographs", "cargo survey gallery", "vessel inspection Abu Dhabi", "marine cargo survey UAE"],
   alternates: { canonical: "/gallery" },
   openGraph: {
     title: "Marine and Cargo Survey Field Gallery | Consolidated Bureau LLC-S.P.C",
@@ -26,13 +28,23 @@ const videos = [
 
 const videoJsonLd = {
   "@context": "https://schema.org",
-  "@graph": videos.map((video) => ({
-    "@type": "VideoObject",
-    name: video.title,
-    description: video.description,
-    thumbnailUrl: new URL(video.poster, siteUrl).href,
-    contentUrl: new URL(video.src, siteUrl).href,
-  })),
+  "@graph": [
+    ...videos.map((video) => ({
+      "@type": "VideoObject",
+      name: video.title,
+      description: video.description,
+      thumbnailUrl: new URL(video.poster, siteUrl).href,
+      contentUrl: new URL(video.src, siteUrl).href,
+    })),
+    {
+      "@type": "ImageGallery",
+      "@id": `${siteUrl}/gallery#photographs`,
+      name: "Marine and cargo survey field photographs",
+      description: "Field photographs from cargo condition, vessel operations, heavy lifts and cargo securing surveys.",
+      url: `${siteUrl}/gallery#photographs`,
+      image: galleryPhotos.map((photo) => ({ "@type": "ImageObject", contentUrl: new URL(photo.src, siteUrl).href, name: photo.title, description: photo.description, caption: photo.alt })),
+    },
+  ],
 };
 
 export default function GalleryPage() {

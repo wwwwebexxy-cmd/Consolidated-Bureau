@@ -1,3 +1,10 @@
 import type { MetadataRoute } from "next";
 import { siteUrl } from "@/lib/content";
-export default function sitemap(): MetadataRoute.Sitemap { return [{ url: siteUrl, changeFrequency: "monthly", priority: 1 }, { url: `${siteUrl}/gallery`, changeFrequency: "monthly", priority: 0.6 }]; }
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const lastModified = new Date();
+  return [
+    { url: siteUrl, lastModified, changeFrequency: "monthly", priority: 1 },
+    { url: `${siteUrl}/gallery`, lastModified, changeFrequency: "monthly", priority: 0.6 },
+  ];
+}

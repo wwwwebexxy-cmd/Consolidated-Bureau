@@ -3,30 +3,21 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ArrowIcon from "@/components/ArrowIcon";
-import { company, locations, mapEmbedUrl, mapUrl, services, siteUrl, whyUs } from "@/lib/content";
+import { company, faqItems, locations, mapEmbedUrl, mapUrl, services, whyUs } from "@/lib/content";
 
-const businessSchema = {
+const faqJsonLd = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "@id": `${siteUrl}/#business`,
-  name: company.name,
-  alternateName: company.legalName,
-  url: siteUrl,
-  logo: `${siteUrl}/consolidated-bureau-logo.webp`,
-  description: "Marine Survey and Loss Adjusting Company established in 1993 with corporate base at Abu Dhabi, U.A.E.",
-  foundingDate: company.established,
-  telephone: "+971567931300",
-  email: "cbops@consolidatedbureau.com",
-  address: { "@type": "PostalAddress", streetAddress: "Office No. 10, 6th Floor, Al Hamed Business Tower, Al Falah St", addressLocality: "Abu Dhabi", addressCountry: "AE" },
-  geo: { "@type": "GeoCoordinates", latitude: 24.4789371, longitude: 54.3713837 },
-  areaServed: { "@type": "Country", name: "United Arab Emirates" },
-  sameAs: ["https://www.linkedin.com/company/13210078/", "https://www.facebook.com/csbauh", "https://youtube.com/@consolidatedbureau-bc6yh"],
-  hasOfferCatalog: { "@type": "OfferCatalog", name: "Our Services", itemListElement: services.map((service) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: service.title } })) },
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: { "@type": "Answer", text: item.answer },
+  })),
 };
 
 export default function Home() {
   return <>
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema).replace(/</g, "\\u003c") }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd).replace(/</g, "\\u003c") }} />
     <Header />
     <main>
       <section id="home" className="hero">
@@ -71,6 +62,8 @@ export default function Home() {
       <section className="approach-section section"><div className="container approach-grid"><div className="approach-intro"><p className="eyebrow eyebrow-light">WHY WE ARE !</p><h2>Why We<br /><em>are !</em></h2><p>{company.intro[3]}</p></div><div className="approach-steps">{whyUs.map((point, index) => <div key={point}><span>{String(index + 1).padStart(2, "0")}</span><h3>{point}</h3></div>)}</div></div></section>
 
       <section className="section coverage-section"><div className="container coverage-grid"><div><p className="eyebrow">UAE</p><h2>What are the<br /><em>locations we operates?</em></h2><p className="coverage-copy">UAE</p><a className="text-link" href="#contact">Contact us <ArrowIcon /></a></div><div className="coverage-panel"><div className="coverage-panel-head"><span>UAE</span><span>ABU DHABI</span></div><ul>{locations.map((location) => <li key={location}>{location}</li>)}</ul><span className="coverage-watermark" aria-hidden="true">AE</span></div></div></section>
+
+      <section id="faq" className="section faq-section"><div className="container faq-grid"><div><p className="eyebrow">QUICK ANSWERS</p><h2>Marine survey<br /><em>FAQs.</em></h2><p>Clear answers for ship owners, insurers, cargo interests and logistics teams arranging independent survey support in the UAE and Gulf region.</p></div><div className="faq-list">{faqItems.map((item) => <details key={item.question}><summary><span>{item.question}</span><span className="faq-plus" aria-hidden="true">+</span></summary><p>{item.answer}</p></details>)}</div></div></section>
 
       <section className="gallery-teaser section"><div className="container gallery-teaser-grid"><Link href="/gallery" className="gallery-teaser-media" aria-label="View field photographs in the gallery"><span className="gallery-teaser-shot gallery-teaser-shot-main"><Image src="/gallery/cargo-vessel-at-berth.webp" alt="Cargo ship moored at a quay." fill sizes="(max-width: 760px) 65vw, 34vw" /></span><span className="gallery-teaser-shot"><Image src="/gallery/copper-sheet-inspection.webp" alt="Surveyor inspecting bundled copper sheets." fill sizes="(max-width: 760px) 35vw, 19vw" /></span><span className="gallery-teaser-shot"><Image src="/gallery/quayside-heavy-lift.webp" alt="Covered project cargo being lifted above a trailer." fill sizes="(max-width: 760px) 35vw, 19vw" /></span><span className="gallery-teaser-stamp">FIELD PHOTOGRAPHS <ArrowIcon /></span></Link><div className="gallery-teaser-copy"><p className="eyebrow">CONSOLIDATED BUREAU LLC-S.P.C</p><h2>Marine<br /><em>Survey.</em></h2><p>Our surveyors act as an interface between all concerned parties.</p><Link className="button button-dark" href="/gallery">View the gallery <ArrowIcon /></Link></div></div></section>
 

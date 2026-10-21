@@ -14,8 +14,8 @@ Open `http://localhost:3000`. For a production check, run `npm.cmd run build` an
 ## Content and assets
 
 - Business copy comes from the supplied `Brochure Text.docx`.
-- `public/logo.jpeg`, the original four gallery photographs, 38 additional photographs in `public/gallery/`, and the two gallery videos are supplied assets.
-- `public/hero-marine-survey.png` is a generated illustrative hero image; the gallery uses supplied field photographs.
+- The supplied survey photographs and the gallery collection are served as optimized WebP assets in `public/`; the two gallery videos remain MP4.
+- `public/hero-brand-still.webp` and `public/consolidated-bureau-marine-surveys-og.webp` are the optimized brand and social-sharing assets.
 - `scripts/generate-brand-assets.py` creates the social sharing image, video posters and favicon from the supplied logo. Run it after changing the logo or brand artwork.
 - `lib/content.ts` holds the brochure copy, service content, the map link and production site URL.
 

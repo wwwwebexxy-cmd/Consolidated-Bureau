@@ -22,6 +22,37 @@ export const company = {
   ],
 };
 
+export const companyContact = {
+  phone: "+971567931300",
+  email: "cbops@consolidatedbureau.com",
+  address: {
+    streetAddress: "Office No. 10, 6th Floor, Al Hamed Business Tower, Al Falah St",
+    addressLocality: "Abu Dhabi",
+    addressRegion: "Abu Dhabi",
+    addressCountry: "AE",
+  },
+  geo: { latitude: 24.4789371, longitude: 54.3713837 },
+};
+
+export const faqItems = [
+  {
+    question: "What services does Consolidated Bureau LLC-S.P.C provide?",
+    answer: "We provide independent marine survey and loss adjusting services including cargo damage, draft, bunker, measurement, hull and machinery, lashing, container, loading, discharge and environmental damage surveys.",
+  },
+  {
+    question: "Where do you provide marine survey services?",
+    answer: "Our Abu Dhabi-based surveyors cover ports and cargo operations across the UAE, including Abu Dhabi, Dubai, Sharjah, Ras Al Khaimah, Khor Fakkan and Fujairah, with experience across the Gulf region.",
+  },
+  {
+    question: "When should I request a draft or bunker survey?",
+    answer: "Request a draft survey to verify bulk cargo quantity before or after loading and discharge. Request a bunker survey when fuel quantities need independent measurement during delivery, handover or charter operations.",
+  },
+  {
+    question: "How can I request a survey in Abu Dhabi?",
+    answer: "Contact Consolidated Bureau LLC-S.P.C at cbops@consolidatedbureau.com or call +971 56 793 1300 with the vessel, cargo, port, timing and required survey scope.",
+  },
+];
+
 type Service = {
   id: string;
   title: string;
@@ -70,7 +101,7 @@ export const services: Service[] = [
     id: "measurement",
     title: "Measurement Survey",
     description: "This survey is carried out prior to loading and / or after discharge especially when there is a dispute between the shipper and the carriers on measurements of the cargo",
-    image: "/measurement-survey.jpeg",
+    image: "/measurement-survey.webp",
     imageAlt: "Survey equipment used during a measurement survey.",
   },
   {
@@ -102,7 +133,7 @@ export const services: Service[] = [
     id: "draft",
     title: "Draft Survey",
     description: "This survey is carried out to quantify the cargo after loading on the vessel or discharged from the vessel by obtaining draft measurements.",
-    image: "/draft-survey.jpeg",
+    image: "/draft-survey.webp",
     imageAlt: "Surveyor taking draft measurements on a vessel hull.",
   },
   {
@@ -114,7 +145,7 @@ export const services: Service[] = [
       "Claim Handling in cases of collision incidents, arranging of surveys and cause investigations.",
       "Loss of Hire Surveys",
     ],
-    image: "/hull-and-machinery.jpeg",
+    image: "/hull-and-machinery.webp",
     imageAlt: "Surveyors inspecting the hull and machinery of a vessel.",
   },
   {
@@ -128,7 +159,7 @@ export const services: Service[] = [
     id: "bunker",
     title: "Bunker Survey",
     description: "Your essential loss-control tool for fuel management. We perform independent tank soundings, temperature corrections, and density verifications to confirm the exact quantity of fuel oil and lubricants delivered or remaining on board.",
-    image: "/bunker-survey.jpeg",
+    image: "/bunker-survey.webp",
     imageAlt: "Surveyor measuring fuel inside a bunker tank.",
   },
   {
@@ -149,7 +180,7 @@ export const services: Service[] = [
     id: "environmental-damage",
     title: "Environmental Damage Survey",
     description: "Rapid response and liability mitigation for ecological incidents. We assess the physical impact and spread of hull groundings, oil spills, or chemical leaks to help guide containment, clean-up, and insurance valuation.",
-    image: "/environment-damage-survey.jpeg",
+    image: "/environment-damage-survey.webp",
     imageAlt: "Cargo vessel listing in rough water during an environmental damage survey.",
   },
   {
@@ -177,7 +208,7 @@ export const whyUs = [
   "More than 3 decades relationship with regions leading insurers, vessel agents, vessel owners and P&I Clubs.",
 ];
 
-export const locations = ["Abu Dhabi", "Dubai", "Shrajah", "Ras Al Khaima", "Korfakan", "Fujairah"];
+export const locations = ["Abu Dhabi", "Dubai", "Sharjah", "Ras Al Khaimah", "Khor Fakkan", "Fujairah"];
 
 export const mapUrl = "https://www.google.com/maps/place/24%C2%B028'44.2%22N+54%C2%B022'17.0%22E/@24.4789371,54.3688088,17z/data=!3m1!4b1!4m4!3m3!8m2!3d24.4789371!4d54.3713837";
 export const mapEmbedUrl = "https://maps.google.com/maps?q=24.4789371%2C54.3713837&t=k&z=17&output=embed";
